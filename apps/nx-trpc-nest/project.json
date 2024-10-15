@@ -1,0 +1,28 @@
+{
+  "name": "nx-trpc-nest",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "apps/nx-trpc-nest/src",
+  "projectType": "application",
+  "tags": [],
+  "targets": {
+    "serve": {
+      "executor": "@nx/js:node",
+      "defaultConfiguration": "development",
+      "dependsOn": [
+        "build"
+      ],
+      "options": {
+        "buildTarget": "nx-trpc-nest:build",
+        "runBuildTargetDependencies": false
+      },
+      "configurations": {
+        "development": {
+          "buildTarget": "nx-trpc-nest:build:development"
+        },
+        "production": {
+          "buildTarget": "nx-trpc-nest:build:production"
+        }
+      }
+    }
+  }
+}
